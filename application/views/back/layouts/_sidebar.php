@@ -5,7 +5,7 @@
 		<div class="sidebar-brand-icon">
 			<i class="fab fa-artstation"></i>
 		</div>
-		<div class="sidebar-brand-text mx-2">Admin - MAN Pati</div>
+		<div class="sidebar-brand-text mx-2">Admin - MI AL MUHAJIRIN</div>
 	</a>
 
 	<!-- Divider -->

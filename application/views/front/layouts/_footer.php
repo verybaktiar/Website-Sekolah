@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center">
 				<img style="width: 300px; height:90px" src="<?= base_url('img/identitas/man.png') ?>" alt="">
-				<p class="mt-3">Jl. Ratu kalinyamat, Tayu Wetan, Kec. Tayu, Kabupaten Pati</p>
+				<p class="mt-3"> Jl. Sultan Syarif Kasim RT 002 RW 005 Dusun Endangn Darma Kampung Bungaraya Kecamatan Bungaraya KabPaten Siak Provinsi Riau</p>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<h5>Tentang Kami</h5>
@@ -16,7 +16,7 @@
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<h5>Kontak Kami</h5>
-				<p>Email : madrasahaliyahnegeri@gmail.com</p>
+				<p>Email : mialmuhajirin2021@gmail.com</p>
 			</div>
 		</div>
 		<hr>

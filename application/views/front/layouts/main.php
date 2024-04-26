@@ -15,7 +15,7 @@
 
 	<!-- Icon -->
 	<link rel="shortcut icon" type="image/png" href="asset/icon.png"/>
-   <title><?= $title ?> - Madrasah Aliyah Negeri Pati</title>
+   <title><?= $title ?> - Madrasah Ibtidaiyah AL MUHAJIRIN</title>
 </head>
 <body>
 

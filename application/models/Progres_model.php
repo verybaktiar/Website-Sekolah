@@ -26,5 +26,25 @@ class Progres_model extends CI_Model {
 		return $this->db->get()->result();
 	}
 
+    public function insert_data($data) {
+        return $this->db->insert('progres', $data); // Ganti 'nama_tabel' dengan nama tabel yang sesuai
+    }
+
+    public function get_all_siswa() {
+        $query = $this->db->get('progres');
+        return $query->result();
+    }
+
+    public function update_data($id, $namaSiswa, $kelas, $progresHafalan) {
+        $data = array(
+            'nama_siswa' => $namaSiswa,
+            'kelas' => $kelas,
+            'progres_hafalan' => $progresHafalan
+        );
+
+        $this->db->where('id', $id);
+        $this->db->update('progres', $data);
+    }
+
     // Metode lain
 }

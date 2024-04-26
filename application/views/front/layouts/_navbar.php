@@ -41,6 +41,9 @@
 				<li class="nav-item <?php if($title == 'Berita') echo "active"; ?>">
 				<a class="nav-link" href="<?= base_url('blog') ?>">Berita</a>
 				</li>
+				<li class="nav-item <?php if($title == 'Progres') echo "active"; ?>">
+				<a class="nav-link" href="<?= base_url('index') ?>">Progres</a>
+				</li>
 			</ul>
 		</div>
 	</div>

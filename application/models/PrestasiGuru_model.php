@@ -36,11 +36,27 @@ class PrestasiGuru_model extends CI_Model {
         $query = $this->db->get_where('prestasiguru', array('id_guru' => $id));
         return $query->row();
     }
-    public function update_data($id, $data) {
-        $this->db->where('id_guru', $id);
-        return $this->db->update('prestasiguru', $data);
+    public function delete_data($id_guru) {
+        $this->db->where('id_guru', $id_guru);
+        return $this->db->delete('prestasiguru');
     }
-    public function delete_data($id) {
+    public function update_data($id_guru, $namaguru, $bidangkegiatan, $namakegiatan,$tingkatkegiatan,$tanggal,$penyelenggara,$keterangan) {
+        $data = array(
+
+            'namaguru' => $namaguru,
+            'bidangkegiatan' => $bidangkegiatan,
+            'namakegiatan' => $namakegiatan,
+            'tingkatkegiatan' =>$tingkatkegiatan,
+            'tanggal'=>$tanggal,
+            'penyelenggara'=>$penyelenggara,
+            'keterangan'=>$keterangan,
+        );
+
+        $this->db->where('id_guru', $id_guru);
+        $this->db->update('prestasiguru', $data);
+    }
+
+    public function delete($id) {
         $this->db->where('id_guru', $id);
         return $this->db->delete('prestasiguru');
     }

@@ -44,6 +44,10 @@
 				<li class="nav-item <?php if($title == 'Progres') echo "active"; ?>">
 				<a class="nav-link" href="<?= base_url('progress') ?>">Progres Hafalan</a>
 				</li>
+				</li>
+				<li class="nav-item <?php if($title == 'PrestasiGuru') echo "active"; ?>">
+				<a class="nav-link" href="<?= base_url('prestasiguruu') ?>">Prestasi</a>
+				</li>
 			</ul>
 		</div>
 	</div>

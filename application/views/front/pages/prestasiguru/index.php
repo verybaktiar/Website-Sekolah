@@ -17,9 +17,6 @@
          <?php endif ?>
 		</div>
 	</div>
-
-	
-
 	<div class="table-responsive mt-3">
       <table class="table table-striped table-bordered"  cellspacing="0" width="100%">
          <thead>
@@ -45,12 +42,8 @@
                     <td><?= isset($guru->tingkatkegiatan) ? $guru->tingkatkegiatan : 'Tingkat Kegiatan Tidak Ditemukan' ?></td>
                     <td><?= isset($guru->tanggal) ? $guru->tanggal : 'Tanggal Tidak Ditemukan' ?></td>
                     <td><?= isset($guru->penyelenggara) ? $guru->penyelenggara : 'Penyelenggara Tidak Ditemukan' ?></td>
-                    <td><?= isset($guru->keterangan) ? $guru->keterangan : 'Keterangan Tidak Ditemukan' ?></td>
-
-
-
-                  
-                    
+                    <td><?= isset($guru->keterangan) ? $guru->keterangan : 'Keterangan Tidak Ditemukan' ?></td> 
+                                   
                 </tr>
                 <?php $no++; ?>
             <?php endforeach; ?>

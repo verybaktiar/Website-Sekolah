@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container">
 		<a class="navbar-brand" href="<?= base_url() ?>">
-			<img style="max-width:250px;" src="<?= base_url('img/identitas/mannew.png') ?>">
+			<img style="max-width:110px;" src="<?= base_url('img/identitas/logoutama.jpg') ?>">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -22,7 +22,7 @@
 					<a class="dropdown-item" href="<?= base_url('profil/fasilitas') ?>">Fasilitas</a>
 				</div>
 				</li>
-				<li class="nav-item dropdown <?php if($title == 'Administrasi Perkantoran' || $title == 'Akutansi' || $title == 'Pemasaran') echo "active"; ?>">
+				<!-- <li class="nav-item dropdown <?php if($title == 'Administrasi Perkantoran' || $title == 'Akutansi' || $title == 'Pemasaran') echo "active"; ?>">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Jurusan
 				</a>
@@ -31,7 +31,7 @@
 					<a class="dropdown-item" href="<?= base_url('jurusan/ak') ?>">Ilmu Pengetahuan Sosial</a>
 					<a class="dropdown-item" href="<?= base_url('jurusan/pm') ?>">Bahasa</a>
 				</div>
-				</li>
+				</li> -->
 				<li class="nav-item <?php if($title == 'Tata Tertib') echo "active"; ?>">
 				<a class="nav-link" href="<?= base_url('tatatertib') ?>">Tata Tertib</a>
 				</li>
@@ -45,9 +45,19 @@
 				<a class="nav-link" href="<?= base_url('progress') ?>">Progres Hafalan</a>
 				</li>
 				</li>
-				<li class="nav-item <?php if($title == 'PrestasiGuru') echo "active"; ?>">
-				<a class="nav-link" href="<?= base_url('prestasiguruu') ?>">Prestasi</a>
-				</li>
+				<!-- <li class="nav-item <?php if($title == 'PrestasiGuru') echo "active"; ?>">
+				<a class="nav-link" href="<?= base_url('prestasiguruu') ?>">Prestasi Guru</a>
+				</li> -->
+				<li class="nav-item dropdown<?php if($title == 'PrestasiGuru') echo "active"; ?>">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Prestasi Madrasah
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="<?= base_url('prestasiguruu') ?>">Prestasi Guru</a>
+					<a class="dropdown-item" href="<?= base_url('jurusan/ak') ?>">Prestasi Siswa Akademik</a>
+					<a class="dropdown-item" href="<?= base_url('jurusan/pm') ?>">Prestasi Siswa Non Akademik</a>
+				</div>
+				</li> 
 			</ul>
 		</div>
 	</div>

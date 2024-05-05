@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
-			<h2>Data Progres Hafalan</h2>
+			<h2>Data Prestasi Guru</h2>
 		</div>
 	</div>
 
@@ -24,10 +24,10 @@
 					<th>No</th>
 					<th>Nama Guru</th>
 					<th>Bidang Kegiatan</th>
-                    <th>Nama Kegiatan</th>
-                    <th>Tingkat Kegiatan</th>
-                    <th>Tanggal</th>
-                    <th>Penyelenggara</th>
+               <th>Nama Kegiatan</th>
+               <th>Tingkat Kegiatan</th>
+               <th>Tanggal</th>
+               <th>Penyelenggara</th>
 					<th>Keterangan</th>
 				</tr>
          </thead>
@@ -36,7 +36,7 @@
             <?php foreach ($data_guru as $guru): ?>
                 <tr>
                     <td><?= $no ?></td>
-                    <td><?= isset($guru->nama_guru) ? $guru->nama_guru : 'Nama Guru Tidak Ditemukan' ?></td>
+                    <td><?= isset($guru->namaguru) ? $guru->namaguru : 'Nama Guru Tidak Ditemukan' ?></td>
                     <td><?= isset($guru->bidangkegiatan) ? $guru->bidangkegiatan : 'Bidang Kegiatan Tidak Ditemukan' ?></td>
                     <td><?= isset($guru->namakegiatan) ? $guru->namakegiatan : 'Nama Kegiatan Tidak Ditemukan' ?></td>
                     <td><?= isset($guru->tingkatkegiatan) ? $guru->tingkatkegiatan : 'Tingkat Kegiatan Tidak Ditemukan' ?></td>

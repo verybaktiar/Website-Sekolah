@@ -2,8 +2,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center">
-				<img style="width: 300px; height:90px" src="<?= base_url('img/identitas/man.png') ?>" alt="">
-				<p class="mt-3"> Jl. Sultan Syarif Kasim RT 002 RW 005 Dusun Endangn Darma Kampung Bungaraya Kecamatan Bungaraya KabPaten Siak Provinsi Riau</p>
+				<img style="max-width:110px;" src="<?= base_url('img/identitas/logoutama.jpg') ?>" alt="">
+				<p class="mt-3"> Jl. Sultan Syarif Kasim RT 002 RW 005 Dusun Endangn Darma Kampung Bungaraya Kecamatan Bungaraya Kabupaten Siak Provinsi Riau</p>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<h5>Tentang Kami</h5>

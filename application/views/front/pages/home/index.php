@@ -46,22 +46,22 @@
 	<div class="container text-center">
 		<div class="row">
 			<div class="col">
-				<h2 class="">Jurusan</h2>
+				<h2 class="">Organisasi</h2>
 			</div>
 		</div>
 		<hr>
 		<div class="row pt-3">
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mb-4">
 				<img class="" src="<?= base_url('img/jurusan/ipa.png') ?>" alt="">
-				<h5 class="mt-2">Ilmu Pengetahuan Alam</h5>
+				<h5 class="mt-2">Sains</h5>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mb-4">
 				<img class="" src="<?= base_url('img/jurusan/ips.png') ?>" alt="">
-				<h5 class="mt-2">Ilmu Pengetahuan Sosial</h5>
+				<h5 class="mt-2">Pramuka</h5>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mb-4">
 				<img class="" src="<?= base_url('img/jurusan/bahasa.png') ?>" alt="">
-				<h5 class="mt-2">Bahasa</h5>
+				<h5 class="mt-2">UKS</h5>
 			</div>
 		</div>
 	</div>

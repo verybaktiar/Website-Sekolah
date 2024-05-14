@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class JadwalPelajaran_model extends CI_Model
+class Siswa_model extends CI_Model
 {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('JadwalPelajaran_model', 'jadwal');
+		$this->load->model('Siswa_model', 'siswa');
 		// Inisialisasi lain jika diperlukan
 	}
 	public function getMenu()
@@ -28,16 +28,16 @@ class JadwalPelajaran_model extends CI_Model
 		return $this->db->get()->result();
 	}
 
-	public function get_all_pelajaran()
+	public function get_all_siswa()
 	{
-		$query = $this->db->get('jadwal_pelajaran');
+		$query = $this->db->get('siswa');
 		return $query->result();
 	}
 
 	public function get_by_kelas($kelas)
 	{
 		$this->db->where('kelas', $kelas);
-		$query = $this->db->get('jadwal_pelajaran');
+		$query = $this->db->get('siswa');
 		return $query->result();
 
 	}
@@ -45,27 +45,18 @@ class JadwalPelajaran_model extends CI_Model
 		if (!empty($kelas)) {
 			$this->db->where('kelas', $kelas);
 		}
-		$query = $this->db->get('jadwal_pelajaran');
+		$query = $this->db->get('siswa');
 		return $query->result();
 	}
 	public function insert_data($data)
 	{
-		return $this->db->insert('jadwal_pelajaran', $data); // Ganti 'nama_tabel' dengan nama tabel yang sesuai
+		return $this->db->insert('siswa', $data); // Ganti 'nama_tabel' dengan nama tabel yang sesuai
 	}
-	public function get_all_guru()
+
+	public function delete_data($id_siswa)
 	{
-		$query = $this->db->get('jadwal_pelajaran');
-		return $query->result();
-	}
-	public function get_guru_by_id($id)
-	{
-		$query = $this->db->get_where('jadwal_pelajaran', array('id_pelajaran' => $id));
-		return $query->row();
-	}
-	public function delete_data($id_guru)
-	{
-		$this->db->where('id_pelajaran', $id_guru);
-		return $this->db->delete('jadwal_pelajaran');
+		$this->db->where('id_siswa', $id_siswa);
+		return $this->db->delete('siswa');
 	}
 	// public function update_data($id_pelajaran, $namaguru, $bidangkegiatan, $namakegiatan,$tingkatkegiatan,$tanggal,$penyelenggara,$keterangan) {
 	// 	$data = array(
@@ -88,9 +79,9 @@ class JadwalPelajaran_model extends CI_Model
 	// 	return $this->db->delete('prestasiguru');
 	// }
 
-	public function update_data($id_pelajaran, $data) {
-		$this->db->where('id_pelajaran', $id_pelajaran);
-		return $this->db->update('jadwal_pelajaran', $data);
+	public function update_data($id_siswa, $data) {
+		$this->db->where('id_siswa', $id_siswa);
+		return $this->db->update('siswa', $data);
 	}
 
 }

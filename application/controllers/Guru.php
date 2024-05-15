@@ -32,18 +32,36 @@ class Guru extends CI_Controller
             $nama_guru = $this->input->post('nama_guru');
             $jabatan = $this->input->post('jabatan');
             $daftar_pelajaran = $this->input->post('daftar_pelajaran');
-            // Data array untuk insert
-            $data = array(
-                'nama_guru' => $nama_guru,
-                'jabatan' => $jabatan,
-                'daftar_pelajaran' => $daftar_pelajaran,
-            );
 
-            // Simpan data ke database melalui model
-            if ($this->Guru_model->insert_data($data)) {
-                $this->session->set_flashdata('success', 'Data berhasil ditambahkan.');
+            // Konfigurasi upload
+            $config['upload_path'] =  './img/guru';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size'] = 2048; // 2MB
+            $config['encrypt_name'] = TRUE; // Enkripsi nama file
+
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('foto_guru')) {
+                $error = array('error' => $this->upload->display_errors());
+                $this->session->set_flashdata('error', $error['error']);
             } else {
-                $this->session->set_flashdata('error', 'Gagal menambahkan data.');
+                $file_data = $this->upload->data();
+                $foto_guru = $file_data['file_name'];
+
+                // Data array untuk insert
+                $data = array(
+                    'nama_guru' => $nama_guru,
+                    'jabatan' => $jabatan,
+                    'daftar_pelajaran' => $daftar_pelajaran,
+                    'foto_guru' => $foto_guru
+                );
+
+                // Simpan data ke database melalui model
+                if ($this->Guru_model->insert_data($data)) {
+                    $this->session->set_flashdata('success', 'Data berhasil ditambahkan.');
+                } else {
+                    $this->session->set_flashdata('error', 'Gagal menambahkan data.');
+                }
             }
 
             // Redirect ke halaman yang diinginkan

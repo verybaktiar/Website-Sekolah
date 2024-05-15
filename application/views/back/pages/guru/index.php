@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
-			<h2>Data Guru</h2>
+			<h2>Data Tenaga Kependidikan</h2>
 		</div>
 	</div>
 
@@ -25,14 +25,14 @@
             <div class="modal-dialog" role="document">
                <div class="modal-content">
                   <div class="modal-header">
-                     <h5 class="modal-title" id="tambahDataModalLabel">Tambah Data Guru</h5>
+                     <h5 class="modal-title" id="tambahDataModalLabel">Tambah Data Tenaga Kependidikan</h5>
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                      </button>
                   </div>
                   <div class="modal-body">
                      <!-- Form Tambah Data -->
-                     <form action="<?= base_url('guru/add') ?>" method="post">
+                     <form action="<?= base_url('guru/add') ?>" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                            <label for="namaSiswa">Nama Guru</label>
                            <input type="text" class="form-control" id="nama_guru" name="nama_guru" required>
@@ -42,8 +42,12 @@
                            <input type="text" class="form-control" id="jabatan" name="jabatan" required>
                         </div>
                         <div class="form-group">
-                           <label for="progresHafalan">Daftar Pelajaran</label>
-                           <input type="text" class="form-control" id="daftar_pelajaran" name="daftar_pelajaran" required>
+                           <label for="progresHafalan">Tanggal Mulai Tugas</label>
+                           <input type="date" class="form-control" id="daftar_pelajaran" name="daftar_pelajaran" required>
+                        </div>
+                        <div class="form-group">
+                           <label for="fotoGuru">Foto Guru</label>
+                           <input type="file" class="form-control" id="foto_guru" name="foto_guru" required>
                         </div>
                        
                         <button type="submit" class="btn btn-success">Simpan</button>
@@ -67,7 +71,8 @@
 					<th>No</th>
 					<th>Nama Guru</th>
 					<th>Jabatan</th>
-					<th>Daftar Pelajaran</th>
+					<th>Tanggal Mulai Tugas</th>
+                    <th>Foto Guru</th>
 					<th>Aksi</th>
 				</tr>
          </thead>
@@ -79,6 +84,9 @@
                     <td><?= htmlspecialchars($guru->nama_guru, ENT_QUOTES, 'UTF-8') ?></td>
                     <td><?= htmlspecialchars($guru->jabatan, ENT_QUOTES, 'UTF-8') ?></td>
                     <td><?= htmlspecialchars($guru->daftar_pelajaran, ENT_QUOTES, 'UTF-8') ?></td>
+                   
+                    <td><img src="<?= base_url('img/guru/' . $guru->foto_guru) ?>" class="img-fluid" style="max-width: 100px; max-height: 100px;" alt="Foto Guru"></td>
+                
                     <td>
                         <div class="btn-group" role="group" aria-label="Aksi">
                             <!-- Tombol Aksi seperti Edit atau Hapus -->
@@ -117,8 +125,8 @@
                         <input type="text" class="form-control" id="editJabatan" name="jabatan" required>
                     </div>
                     <div class="form-group">
-                        <label for="editProgresHafalan">Daftar Pelajaran</label>
-                        <input type="text" class="form-control" id="editDaftarPelajaran" name="daftar_pelajaran" required>
+                        <label for="editProgresHafalan">Tanggal Mulai Tugas</label>
+                        <input type="date" class="form-control" id="editDaftarPelajaran" name="daftar_pelajaran" required>
                     </div>
                  
 

@@ -67,7 +67,11 @@
 	</div>
 </div>
 <!-- End of Jurusan -->
-
+<div class="video-background" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <div class="video-foreground" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60%; height: 60%;">
+        <iframe src="<?= base_url('img/intro.mp4') ?>" frameborder="0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+    </div>
+</div>
 <!-- Berita -->
 <div class="last-news mt-5 mb-5">
 	<div class="container">

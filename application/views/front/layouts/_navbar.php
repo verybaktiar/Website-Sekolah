@@ -21,17 +21,7 @@
 					<a class="dropdown-item" href="<?= base_url('profil/struktur') ?>">Struktur Organisasi</a>
 					<a class="dropdown-item" href="<?= base_url('profil/fasilitas') ?>">Fasilitas</a>
 				</div>
-				</li>
-				<!-- <li class="nav-item dropdown <?php if($title == 'Administrasi Perkantoran' || $title == 'Akutansi' || $title == 'Pemasaran') echo "active"; ?>">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Jurusan
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="<?= base_url('jurusan/ap') ?>">Ilmu Pengetahuan Alam</a>
-					<a class="dropdown-item" href="<?= base_url('jurusan/ak') ?>">Ilmu Pengetahuan Sosial</a>
-					<a class="dropdown-item" href="<?= base_url('jurusan/pm') ?>">Bahasa</a>
-				</div>
-				</li> -->
+				
 				<li class="nav-item <?php if($title == 'Tata Tertib') echo "active"; ?>">
 				<a class="nav-link" href="<?= base_url('tatatertib') ?>">Tata Tertib</a>
 				</li>
@@ -56,6 +46,16 @@
 					<a class="dropdown-item" href="<?= base_url('prestasiguruu') ?>">Prestasi Guru</a>
 					<a class="dropdown-item" href="<?= base_url('jurusan/ak') ?>">Prestasi Siswa Akademik</a>
 					<a class="dropdown-item" href="<?= base_url('jurusan/pm') ?>">Prestasi Siswa Non Akademik</a>
+				</div>
+				</li> 
+				<li class="nav-item dropdown <?php if($title == 'Jadwal Pelajaran' || $title == 'Daftar Siswa' || $title == 'Daftar Guru') echo "active"; ?>">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Lainya
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="<?= base_url('jadwalpelajarann') ?>">Jadwal Pelajaran</a>
+					<a class="dropdown-item" href="<?= base_url('daftarsiswaa') ?>">Daftar Siswa</a>
+					<a class="dropdown-item" href="<?= base_url('daftarguruu') ?>">Daftar Guru</a>
 				</div>
 				</li> 
 			</ul>

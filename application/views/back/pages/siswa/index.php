@@ -59,7 +59,7 @@
                                     <select class="form-control" id="kelas" name="kelas" required>
                                         <?php for ($i = 1; $i <= 6; $i++) : ?>
                                             <option value="<?= $i ?>A"><?= $i ?>A</option>
-                                            <option value="<?= $i ?>B"><?= $i ?>B</option>
+                                            <opwetion value="<?= $i ?>B"><?= $i ?>B</opwetion>
                                             <option value="<?= $i ?>C"><?= $i ?>C</option>
                                         <?php endfor; ?>
                                     </select>
@@ -89,19 +89,21 @@
                 </tr>
             </thead>
             <tbody>
+                <?php $no = 1; ?>
                 <?php foreach ($data_siswa as $s) : ?>
                     <tr>
-                        <td><?= $s->id_siswa ?></td>
+                        <td><?= $no ?></td>
                         <td><?= $s->nama_siswa ?></td>
                         <td><?= $s->kelas ?></td>
                         <td>
-                        <div class="btn-group" role="group" aria-label="Aksi">
-                            <!-- Tombol Aksi seperti Edit atau Hapus -->
-                            <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editDataModal" onclick="setEditData(<?= $s->id_siswa ?>, '<?= $s->nama_siswa ?>', '<?= $s->kelas ?>')">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteConfirmModal" onclick="setDeleteLink('<?= base_url('siswa/delete/' . $s->id_siswa) ?>')">Hapus</a>
-                        </div>
+                            <div class="btn-group" role="group" aria-label="Aksi">
+                                <!-- Tombol Aksi seperti Edit atau Hapus -->
+                                <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editDataModal" onclick="setEditData(<?= $s->id_siswa ?>, '<?= $s->nama_siswa ?>', '<?= $s->kelas ?>')">Edit</a>
+                                <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteConfirmModal" onclick="setDeleteLink('<?= base_url('siswa/delete/' . $s->id_siswa) ?>')">Hapus</a>
+                            </div>
                         </td>
                     </tr>
+                    <?php $no++; ?>
                 <?php endforeach; ?>
             </tbody>
         </table>
@@ -126,7 +128,7 @@
                     <input type="hidden" name="id_siswa" id="id_siswa" value="">
                     <div class="form-group">
                         <label for="nama_siswa">Nama Siswa</label>
-                        <input type="text" class="form-control"  id="editnamasiswa" name="nama_siswa"required>
+                        <input type="text" class="form-control" id="editnamasiswa" name="nama_siswa" required>
                     </div>
                     <div class="form-group">
                         <label for="editKelas">Kelas</label>
@@ -167,14 +169,14 @@
     </div>
 </div>
 <script>
-function setEditData(id_siswa, nama_siswa, kelas) {
-    var kelas = $(this).data('kelas');
-    $('#editId').val(id_siswa);
-    $('#editnamasiswa').val(nama_siswa);
-    $('#editKelas').val(kelas);
-}
+    function setEditData(id_siswa, nama_siswa, kelas) {
+        var kelas = $(this).data('kelas');
+        $('#editId').val(id_siswa);
+        $('#editnamasiswa').val(nama_siswa);
+        $('#editKelas').val(kelas);
+    }
 
-function setDeleteLink(link) {
-    $('#deleteBtn').attr('href', link);
-}
+    function setDeleteLink(link) {
+        $('#deleteBtn').attr('href', link);
+    }
 </script>

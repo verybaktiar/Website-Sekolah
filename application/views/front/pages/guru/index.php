@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
-			<h2>Data Guru</h2>
+			<h2>Data Tenaga Kependidikan</h2>
 		</div>
 	</div>
 
@@ -30,16 +30,26 @@
 					<th>Nama Guru</th>
 					<th>Jabatan</th>
 					<th>Daftar Pelajaran</th>
+               <th>Foto Guru</th>
 				</tr>
          </thead>
          <tbody>
          <?php $no = 1; ?>
             <?php foreach ($data_guru as $guru): ?>
                 <tr>
-                    <td><?= $no ?></td>
+                <td><?= $no ?></td>
                     <td><?= htmlspecialchars($guru->nama_guru, ENT_QUOTES, 'UTF-8') ?></td>
                     <td><?= htmlspecialchars($guru->jabatan, ENT_QUOTES, 'UTF-8') ?></td>
                     <td><?= htmlspecialchars($guru->daftar_pelajaran, ENT_QUOTES, 'UTF-8') ?></td>
+                   
+                    <td>
+                        <?php if (isset($guru->foto_guru) && $guru->foto_guru): ?>
+                            <img src="<?= base_url('img/guru/' . $guru->foto_guru) ?>" class="img-fluid" style="max-width: 100px; max-height: 100px;" alt="Foto Guru">
+                        <?php else: ?>
+                            <img src="<?= base_url('img/guru/default.jpg') ?>" class="img-fluid" style="max-width: 100px; max-height: 100px;" alt="Foto Guru Tidak Tersedia">
+                        <?php endif; ?>
+                    </td>
+                
                  
                 </tr>
                 <?php $no++; ?>

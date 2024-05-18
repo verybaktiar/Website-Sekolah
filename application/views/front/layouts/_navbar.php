@@ -44,8 +44,7 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item" href="<?= base_url('prestasiguruu') ?>">Prestasi Guru</a>
-					<a class="dropdown-item" href="<?= base_url('jurusan/ak') ?>">Prestasi Siswa Akademik</a>
-					<a class="dropdown-item" href="<?= base_url('jurusan/pm') ?>">Prestasi Siswa Non Akademik</a>
+					<a class="dropdown-item" href="<?= base_url('jurusan/ak') ?>">Prestasi Siswa </a>
 				</div>
 				</li> 
 				<li class="nav-item dropdown <?php if($title == 'Jadwal Pelajaran' || $title == 'Daftar Siswa' || $title == 'Daftar Guru') echo "active"; ?>">
@@ -54,8 +53,8 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item" href="<?= base_url('jadwalpelajarann') ?>">Jadwal Pelajaran</a>
-					<a class="dropdown-item" href="<?= base_url('daftarsiswaa') ?>">Daftar Siswa</a>
-					<a class="dropdown-item" href="<?= base_url('daftarguruu') ?>">Daftar Guru</a>
+					<a class="dropdown-item" href="<?= base_url('daftarsiswaa') ?>">Data Pendidik</a>
+					<a class="dropdown-item" href="<?= base_url('daftarguruu') ?>">Data Tenaga Kependidikan</a>
 				</div>
 				</li> 
 			</ul>

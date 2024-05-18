@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2>Data Siswa</h2>
+            <h2>Data Pendidik</h2>
         </div>
     </div>
 

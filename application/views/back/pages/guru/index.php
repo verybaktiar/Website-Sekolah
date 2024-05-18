@@ -85,7 +85,13 @@
                     <td><?= htmlspecialchars($guru->jabatan, ENT_QUOTES, 'UTF-8') ?></td>
                     <td><?= htmlspecialchars($guru->daftar_pelajaran, ENT_QUOTES, 'UTF-8') ?></td>
                    
-                    <td><img src="<?= base_url('img/guru/' . $guru->foto_guru) ?>" class="img-fluid" style="max-width: 100px; max-height: 100px;" alt="Foto Guru"></td>
+                    <td>
+                        <?php if (isset($guru->foto_guru) && $guru->foto_guru): ?>
+                            <img src="<?= base_url('img/guru/' . $guru->foto_guru) ?>" class="img-fluid" style="max-width: 100px; max-height: 100px;" alt="Foto Guru">
+                        <?php else: ?>
+                            <img src="<?= base_url('img/guru/default.jpg') ?>" class="img-fluid" style="max-width: 100px; max-height: 100px;" alt="Foto Guru Tidak Tersedia">
+                        <?php endif; ?>
+                    </td>
                 
                     <td>
                         <div class="btn-group" role="group" aria-label="Aksi">

@@ -33,7 +33,7 @@
             </form>
         </div>
     </div>
-    <div class="row mt-3">
+    <div class="row mt-3">  
         <div class="col">
             <!-- Modal Tambah Data -->
         </div>

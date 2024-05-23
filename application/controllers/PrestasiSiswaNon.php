@@ -18,7 +18,7 @@ class PrestasiSiswaNon extends CI_Controller
     {
 
         $this->load->model('PrestasiSiswaNon_model'); // Pastikan nama model ini benar
-        // $data['data_siswa'] = $this->PrestasiSiswaNon_model->get_all_siswa();
+        $data['data_siswa'] = $this->PrestasiSiswaNon_model->get_all_siswa();
         // $data['data_siswa'] = $this->Progres_model->get_all_siswa(); // Metode 'get_all_siswa' harus ada di model Anda
         $data['title']        = 'Prestasi';
         $data['page']        = 'prestasisiswanon/index'; // Sesuaikan path sesuai dengan struktur direktori Anda
@@ -64,32 +64,30 @@ class PrestasiSiswaNon extends CI_Controller
     public function update_data()
     {
 
-        $id_guru = $this->input->post('id_guru');
-        $namaguru = $this->input->post('namaguru');
-        $bidangkegiatan = $this->input->post('bidangkegiatan');
-        $namakegiatan = $this->input->post('namakegiatan');
-        $tingkatkegiatan = $this->input->post('tingkatkegiatan');
+        $id_siswa = $this->input->post('id_siswa');
+        $namasiswa = $this->input->post('namasiswa');
+        $bidanglomba = $this->input->post('bidanglomba');
+        $namalomba = $this->input->post('namalomba');
+        $tingkatlomba = $this->input->post('tingkatlomba');
         $tanggal = $this->input->post('tanggal');
         $penyelenggara = $this->input->post('penyelenggara');
-        $keterangan = $this->input->post('keterangan');
+        $peringkat = $this->input->post('peringkat');
 
-        $this->load->model('PrestasiGuru_model');
-        $this->PrestasiGuru_model->update_data($id_guru, $namaguru, $bidangkegiatan, $namakegiatan, $tingkatkegiatan, $tanggal, $penyelenggara, $keterangan);
+        $this->load->model('PrestasiSiswaNon_model');
+        $this->PrestasiSiswaNon_model->update_data($id_siswa, $namasiswa, $bidanglomba, $namalomba, $tingkatlomba, $tanggal, $penyelenggara, $peringkat);
 
         // Redirect or show success message
-        redirect('prestasiguru/index');
+        redirect('prestasisiswanon/index');
     }
 
-    public function delete($id_guru)
+    public function delete($id)
     {
-        $id_guru = $this->input->post('id_guru');
-
-        if ($this->PrestasiGuru_model->delete($id_guru)) {
+        $this->load->model('PrestasiSiswaNon_model');
+        if ($this->PrestasiSiswaNon_model->delete_data($id)) {
             $this->session->set_flashdata('success', 'Data berhasil dihapus.');
         } else {
-            $this->session->set_flashdata('error', 'Gagal menghapus data.');
+            $this->session->set_flashdata('error', 'Data gagal dihapus.');
         }
-
-        redirect('prestasiguru/index');
+        redirect('prestasisiswanon');
     }
 }

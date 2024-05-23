@@ -79,16 +79,14 @@ class PrestasiGuru extends CI_Controller
         redirect('prestasiguru/index');
     }
 
-    public function delete($id_guru)
+    public function delete($id)
     {
-        $id_guru = $this->input->post('id_guru');
-
-        if ($this->PrestasiGuru_model->delete($id_guru)) {
+        $this->load->model('PrestasiGuru_model');
+        if ($this->PrestasiGuru_model->delete_data($id)) {
             $this->session->set_flashdata('success', 'Data berhasil dihapus.');
         } else {
-            $this->session->set_flashdata('error', 'Gagal menghapus data.');
+            $this->session->set_flashdata('error', 'Data gagal dihapus.');
         }
-
         redirect('prestasiguru/index');
     }
 }

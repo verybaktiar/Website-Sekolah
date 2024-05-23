@@ -168,16 +168,42 @@
                     <div class="form-group">
                         <label for="editHari">Hari</label>
                         <select class="form-control" id="editHari" name="hari" required>
+                            <option value="Senin">Senin</option>
+                            <option value="Selasa">Selasa</option>
+                            <option value="Rabu">Rabu</option>
+                            <option value="Kamis">Kamis</option>
+                            <option value="Jumat">Jumat</option>
+                            <option value="Sabtu">Sabtu</option>
+                            <option value="Minggu">Minggu</option>
                             <!-- Options -->
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="editMataPelajaran">Mata Pelajaran</label>
+
                         <textarea class="form-control" id="editMataPelajaran" name="matapelajaran" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="editKelas">Kelas</label>
                         <select class="form-control" id="editKelas" name="kelas" required>
+                            <option value="1A">1A</option>
+                            <option value="1B">1B</option>
+                            <option value="1C">1C</option>
+                            <option value="2A">2A</option>
+                            <option value="2B">2B</option>
+                            <option value="2C">2C</option>
+                            <option value="3A">3A</option>
+                            <option value="3B">3B</option>
+                            <option value="3C">3C</option>
+                            <option value="4A">4A</option>
+                            <option value="4B">4B</option>
+                            <option value="4C">4C</option>
+                            <option value="5A">5A</option>
+                            <option value="5B">5B</option>
+                            <option value="5C">5C</option>
+                            <option value="6A">6A</option>
+                            <option value="6B">6B</option>
+                            <option value="6C">6C</option>
                             <!-- Options -->
                         </select>
                     </div>
@@ -237,6 +263,9 @@
             var inputGroup = btn.closest('.input-group');
             inputGroup.remove();
         }
+        function setDeleteLink(link) {
+        $('#deleteBtn').attr('href', link);
+    }
     </script>
 
     <script>

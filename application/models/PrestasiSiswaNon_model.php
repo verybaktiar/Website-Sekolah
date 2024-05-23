@@ -32,6 +32,20 @@ class PrestasiSiswaNon_model extends CI_Model {
         $query = $this->db->get('prestasisiswanon');
         return $query->result();
     }
+    public function update_data($id_siswa, $namasiswa, $bidanglomba, $namalomba, $tingkatlomba, $tanggal, $penyelenggara, $peringkat) {
+        $data = array(
+            'namasiswa' => $namasiswa,
+            'bidanglomba' => $bidanglomba,
+            'namalomba' => $namalomba,
+            'tingkatlomba' => $tingkatlomba,
+            'tanggal' => $tanggal,
+            'penyelenggara' => $penyelenggara,
+            'peringkat' => $peringkat
+        );
+
+        $this->db->where('id_siswa', $id_siswa);
+        $this->db->update('prestasisiswanon', $data);
+    }
     public function get_siswa_by_id($id) {
         $query = $this->db->get_where('prestasisiswanon', array('id_siswa' => $id));
         return $query->row();
@@ -42,10 +56,8 @@ class PrestasiSiswaNon_model extends CI_Model {
     }
 
 
-    public function delete($id) {
-        $this->db->where('id_guru', $id);
-        return $this->db->delete('prestasiguru');
-    }
+   
+ 
     
 
 }

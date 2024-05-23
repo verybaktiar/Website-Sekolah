@@ -91,13 +91,76 @@
                 </tr>
             </thead>
             <tbody>
-
+                <?php foreach ($data_siswa as $prestasisiswanon) : ?>
+                    <tr>
+                        <td><?= $prestasisiswanon->id_siswa ?></td>
+                        <td><?= $prestasisiswanon->namasiswa ?></td>
+                        <td><?= $prestasisiswanon->bidanglomba ?></td>
+                        <td><?= $prestasisiswanon->namalomba ?></td>
+                        <td><?= $prestasisiswanon->tingkatlomba ?></td>
+                        <td><?= $prestasisiswanon->tanggal ?></td>
+                        <td><?= $prestasisiswanon->penyelenggara ?></td>
+                        <td><?= $prestasisiswanon->peringkat ?></td>
+                        <td>
+                             <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editDataModal" onclick="setEditData(<?= $prestasisiswanon->id_siswa ?>, '<?= $prestasisiswanon->namasiswa ?>', '<?= $prestasisiswanon->bidanglomba ?>', '<?= $prestasisiswanon->namalomba ?>', '<?= $prestasisiswanon->tingkatlomba ?>', '<?= $prestasisiswanon->tanggal ?>', '<?= $prestasisiswanon->penyelenggara ?>', '<?= $prestasisiswanon->peringkat ?>')">Edit</a>
+                            <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteConfirmModal" onclick="setDeleteLink('<?= base_url('prestasisiswanon/delete/' . $prestasisiswanon->id_siswa) ?>')">Hapus</a>
+                           
+                        </td>
+                    </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
     </div>
 
-</div>
+</div><!-- Modal Edit Data -->
+<div class="modal fade" id="editDataModal" tabindex="-1" role="dialog" aria-labelledby="editDataModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editDataModalLabel">Edit Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form Edit Data -->
+                <form action="<?= base_url('prestasisiswanon/update_data') ?>" method="post">
+                    <input type="hidden" name="id_siswa" id="editId">
+                    <div class="form-group">
+                        <label for="editNamaSiswa">Nama Siswa</label>
+                        <input type="text" class="form-control" id="editNamaSiswa" name="namasiswa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editKelas">Bidang Lomba</label>
+                            <input type="text" class="form-control" id="editBidangLomba" name="bidanglomba" required>
+                    </div>
+                    <div class="form-group">
+                            <label for="editProgresHafalan">Nama Lomba</label>
+                        <input type="text" class="form-control" id="editNamaLomba" name="namalomba" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editProgresHafalan">Tingkat Lomba</label>
+                        <input type="text" class="form-control" id="editTingkatLomba" name="tingkatlomba" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editProgresHafalan">Tanggal Pelaksana</label>
+                        <input type="date" class="form-control" id="editTanggal" name="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editProgresHafalan">Penyelenggara</label>
+                        <input type="text" class="form-control" id="editPenyelenggara" name="penyelenggara" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editProgresHafalan">Peringkat</label>
+                        <input type="text" class="form-control" id="editPeringkat" name="peringkat" required>
+                    </div>
 
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Modal Delete Confirmation -->
 <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -119,15 +182,15 @@
     </div>
 </div>
 <script>
-    function setEditData(id_guru, namaguru, bidangkegiatan, namakegiatan, tingkatkegiatan, tanggal, penyelenggara, keterangan) {
-        $('#editId').val(id_guru);
-        $('#editNamaGuru').val(namaguru);
-        $('#editBidangKegiatan').val(bidangkegiatan);
-        $('#editNamaKegiatan').val(namakegiatan);
-        $('#editTingkatKegiatan').val(tingkatkegiatan);
+    function setEditData(id_siswa, namasiswa, bidanglomba, namalomba, tingkatlomba, tanggal, penyelenggara, peringkat) {
+        $('#editId').val(id_siswa);
+        $('#editNamaSiswa').val(namasiswa);
+        $('#editBidangLomba').val(bidanglomba);
+        $('#editNamaLomba').val(namalomba);
+        $('#editTingkatLomba').val(tingkatlomba);
         $('#editTanggal').val(tanggal);
         $('#editPenyelenggara').val(penyelenggara);
-        $('#editKeterangan').val(keterangan);
+        $('#editPeringkat').val(peringkat);
     }
 
     function setDeleteLink(link) {

@@ -85,16 +85,15 @@ class Guru extends CI_Controller
         redirect('guru/index');
     }
 
-    public function delete($id_guru)
+    public function delete($id)
     {
-        $id_guru = $this->input->post('id_guru');
-
-        if ($this->Guru_model->delete($id_guru)) {
+        $this->load->model('Guru_model');
+        if ($this->Guru_model->delete_data($id)) {
             $this->session->set_flashdata('success', 'Data berhasil dihapus.');
         } else {
-            $this->session->set_flashdata('error', 'Gagal menghapus data.');
+            $this->session->set_flashdata('error', 'Data gagal dihapus.');
         }
-
         redirect('guru/index');
     }
+    
 }

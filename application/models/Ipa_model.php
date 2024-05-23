@@ -54,8 +54,7 @@ class Ipa_model extends CI_Model {
     }
 
     public function delete($id) {
-        $this->db->where('id_guru', $id);
-        return $this->db->delete('guru');
+        return $this->db->delete('ipa', array('id' => $id));
     }
     
 

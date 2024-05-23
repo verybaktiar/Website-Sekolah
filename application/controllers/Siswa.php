@@ -69,5 +69,17 @@ class Siswa extends CI_Controller
         $this->load->view('back/layouts/main', $data);
     }
 
+    public function delete($id)
+    {
+        $this->load->model('Siswa_model');
+        if ($this->Siswa_model->delete_data($id)) {
+            $this->session->set_flashdata('success', 'Data berhasil dihapus.');
+        } else {
+            $this->session->set_flashdata('error', 'Data gagal dihapus.');
+        }
+        redirect('siswa/index');
+    }
+
+
     
 }

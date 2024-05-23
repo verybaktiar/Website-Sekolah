@@ -45,6 +45,9 @@ class Progres_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update('progres', $data);
     }
+    public function delete_data($id) {
+        return $this->db->delete('progres', array('id' => $id));
+    }
 
     // Metode lain
 }

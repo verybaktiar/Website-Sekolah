@@ -92,5 +92,9 @@ class JadwalPelajaran_model extends CI_Model
 		$this->db->where('id_pelajaran', $id_pelajaran);
 		return $this->db->update('jadwal_pelajaran', $data);
 	}
+	public function delete($id) {
+		$this->db->where('id_pelajaran', $id);
+		return $this->db->delete('jadwal_pelajaran');
+	}
 
 }

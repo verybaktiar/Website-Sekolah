@@ -108,4 +108,14 @@ class JadwalPelajaran extends CI_Controller
             redirect('jadwalpelajaran/index');
         }
     }
+    public function delete($id)
+    {
+        $this->load->model('JadwalPelajaran_model');
+        if ($this->JadwalPelajaran_model->delete_data($id)) {
+            $this->session->set_flashdata('success', 'Data berhasil dihapus.');
+        } else {
+            $this->session->set_flashdata('error', 'Data gagal dihapus.');
+        }
+        redirect('jadwalpelajaran/index');
+    }
 }

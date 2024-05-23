@@ -84,4 +84,7 @@ class Siswa_model extends CI_Model
 		return $this->db->update('siswa', $data);
 	}
 
+	public function delete($id) {
+        return $this->db->delete('siswa', array('id_siswa' => $id));
+    }
 }

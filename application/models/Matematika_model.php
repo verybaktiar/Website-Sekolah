@@ -33,12 +33,12 @@ class Matematika_model extends CI_Model {
         return $query->result();
     }
     public function get_guru_by_id($id) {
-        $query = $this->db->get_where('guru', array('id_guru' => $id));
+        $query = $this->db->get_where('matematika', array('id' => $id));
         return $query->row();
     }
-    public function delete_data($id_guru) {
-        $this->db->where('id_guru', $id_guru);
-        return $this->db->delete('guru');
+    public function delete_data($id) {
+        $this->db->where('id', $id);
+        return $this->db->delete('matematika');
     }
     public function update_data($id_guru, $nama_guru, $jabatan, $daftar_pelajaran) {
         $data = array(

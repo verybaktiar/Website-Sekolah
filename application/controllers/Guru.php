@@ -32,7 +32,7 @@ class Guru extends CI_Controller
             $nama_guru = $this->input->post('nama_guru');
             $jabatan = $this->input->post('jabatan');
             $daftar_pelajaran = $this->input->post('daftar_pelajaran');
-
+ 
             // Konfigurasi upload
             $config['upload_path'] =  './img/guru';
             $config['allowed_types'] = 'gif|jpg|png';

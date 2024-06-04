@@ -32,7 +32,7 @@
                         </div>
                         <div class="modal-body">
                             <!-- Form Tambah Data -->
-                            <form action="<?= base_url('ipa/add') ?>" method="post">
+                            <form action="<?= base_url('Ipa/add') ?>" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="namasiswa">Nama Siswa</label>
                                     <input type="text" class="form-control" id="namasiswa" name="namasiswa" required>

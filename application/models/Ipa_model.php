@@ -26,7 +26,8 @@ class Ipa_model extends CI_Model {
 		return $this->db->get()->result();
 	}
     public function insert_data($data) {
-        return $this->db->insert('ipa', $data); // Ganti 'nama_tabel' dengan nama tabel yang sesuai
+        return $this->db->insert('ipa', $data);
+         // Ganti 'nama_tabel' dengan nama tabel yang sesuai
     }
     public function get_all_siswa() {
         $query = $this->db->get('ipa');
@@ -36,9 +37,9 @@ class Ipa_model extends CI_Model {
         $query = $this->db->get_where('guru', array('id_guru' => $id));
         return $query->row();
     }
-    public function delete_data($id_guru) {
-        $this->db->where('id_guru', $id_guru);
-        return $this->db->delete('guru');
+    public function delete_data($id) {
+        $this->db->where('id', $id);
+        return $this->db->delete('ipa');
     }
     public function update_data($id_guru, $nama_guru, $jabatan, $daftar_pelajaran) {
         $data = array(

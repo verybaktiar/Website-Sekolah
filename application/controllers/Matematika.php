@@ -75,6 +75,6 @@ public function add()
         } else {
             $this->session->set_flashdata('error', 'Data gagal dihapus.');
         }
-        redirect('ipa');
+        redirect('matematika');
     }
 }

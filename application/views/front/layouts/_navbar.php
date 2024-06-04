@@ -55,6 +55,9 @@
 					<a class="dropdown-item" href="<?= base_url('jadwalpelajarann') ?>">Jadwal Pelajaran</a>
 					<a class="dropdown-item" href="<?= base_url('daftarsiswaa') ?>">Data Pendidik</a>
 					<a class="dropdown-item" href="<?= base_url('daftarguruu') ?>">Data Tenaga Kependidikan</a>
+					<a class="dropdown-item" href="<?= base_url('ipaa') ?>">Ipa Terintegrasi</a>
+					<a class="dropdown-item" href="<?= base_url('matematikaa') ?>">Matematika Terintegrasi</a>
+
 				</div>
 				</li> 
 			</ul>

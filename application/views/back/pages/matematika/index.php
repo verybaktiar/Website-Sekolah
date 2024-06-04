@@ -32,7 +32,7 @@
                         </div>
                         <div class="modal-body">
                             <!-- Form Tambah Data -->
-                            <form action="<?= base_url('matematika/add') ?>" method="post">
+                            <form action="<?= base_url('matematika/add') ?>" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="namasiswa">Nama Siswa</label>
                                     <input type="text" class="form-control" id="namasiswa" name="namasiswa" required>
@@ -97,7 +97,7 @@
                         <div class="btn-group" role="group" aria-label="Aksi">
                             <!-- Tombol Aksi seperti Edit atau Hapus -->
                             <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editDataModal" onclick="setEditData(<?= $siswa->id ?>, '<?= $siswa->namasiswa?>', '<?= $siswa->namaguru ?>', '<?= $siswa->prestasi ?>')">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteConfirmModal" onclick="setDeleteLink('<?= base_url('ipa/delete/' . $siswa->id) ?>')">Hapus</a>
+                            <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteConfirmModal" onclick="setDeleteLink('<?= base_url('matematika/delete/' . $siswa->id) ?>')">Hapus</a>
                         </div>
                     </td>
                 </tr>
